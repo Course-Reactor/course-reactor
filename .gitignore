@@ -1,0 +1,19 @@
+# Node modules
+node_modules
+
+# Adonis tmp Directory
+tmp
+
+# Environment Variables
+.env
+
+# Database Files for Local Development
+postgres
+
+# VSCode directories
+.history
+.vscode
+
+# Build Output
+public/*
+!public/.gitkeep

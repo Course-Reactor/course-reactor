@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "course-reactor-ui",
+      "cwd": "./",
+      "script": "./node_modules/.bin/webpack --mode development --watch"
+    },
+    {
+      "name": "course-reactor-api",
+      "watch": "./*.js",
+      "cwd": "./",
+      "script": "server.js"
+    }
+  ]
+}
