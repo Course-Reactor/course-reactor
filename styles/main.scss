@@ -1,0 +1,123 @@
+@use "typography";
+@use "colors";
+
+$primary: colors.$primary;
+$success: colors.$success;
+$error: colors.$error;
+$light: colors.$light;
+$surface: colors.$surface;
+$dark: colors.$dark;
+$dark-surface: colors.$dark-surface;
+$grey: colors.$grey;
+$font-size-title: typography.$title;
+$font-size-medium: typography.$medium;
+$font-size-large: typography.$large;
+
+:root {
+  --primary: #{$primary};
+  --success: #{$success};
+  --error: #{$error};
+  --light: #{$light};
+  --surface: #{$surface};
+  --dark-surface: #{$dark-surface};
+  --font: #{$dark};
+  --link: #{$primary};
+  --label: #{$grey};
+
+  --font-size-title: #{$font-size-title};
+  --font-size-medium: #{$font-size-medium};
+  --font-size-large: #{$font-size-large};
+}
+
+html,
+body {
+  color: var(--font);
+  font-family: "Work Sans", sans-serif;
+  height: 100vh;
+  line-height: 1.5;
+  width: 100vw;
+}
+
+body {
+  padding: 50px 35px;
+  background-color: var(--surface);
+
+  #__next {
+    height: 100%;
+  }
+}
+
+main {
+  header {
+    margin-bottom: 35px;
+
+    span {
+      color: var(--label);
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+/**
+ * Form Elements
+ */
+
+button {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: typography.$medium;
+  padding: 15px 35px;
+}
+
+input {
+  background: transparent;
+  border: none;
+  padding: 15px 0;
+  transition: box-shadow 0.2s ease-in-out;
+  width: 100%;
+}
+
+input:focus,
+input:not(:placeholder-shown) {
+  box-shadow: inset 0 -3px $dark;
+  outline: none;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  legend {
+    display: none;
+  }
+}
+
+/**
+ * Dark Mode
+ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #{$dark};
+    --font: #{$light};
+    --link: #{$success};
+  }
+}

@@ -1,209 +1,148 @@
-import Head from 'next/head'
+import { motion } from "framer-motion";
+import Head from "next/head";
+import { Card, Layout } from "../components";
+import style from "../styles/pages/index.module.scss";
+
+const easing = [0.6, -0.05, 0.01, 0.99];
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      easing: easing,
+    },
+  },
+};
+
+const fadeIn = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+};
 
 export default function Home() {
   return (
-    <div className="container">
+    <motion.div
+      className={style.container}
+      initial="initial"
+      animate="animate"
+      exit={{ opacity: 0 }}
+    >
       <Head>
-        <title>Create Next App</title>
+        <title>Course Reactor</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
+      <Layout>
+        <motion.section variants={fadeInUp} className={style.hero}>
+          <aside>
+            <h1>Course Reactor</h1>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              The Course Reactor Foundation exists to democratize education and
+              allow people from all walks of life to pursue their interests and
+              participate in academia.
             </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+          </aside>
+          <img src="/images/scholar.png" />
+        </motion.section>
+        <motion.section variants={fadeIn}>
+          <Card>
+            <header>
+              <h2>Web Development Degree</h2>
+              <span>
+                Class Begins: September 1<sup>st</sup> 2020
+              </span>
+            </header>
+            <form onSubmit={handleFormSubmit} className={style.form}>
+              <fieldset>
+                <div className={style.horizontal}>
+                  <legend>Enrollment Form</legend>
+                  <div className={style.field}>
+                    <label htmlFor="fullName">Full Name</label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      placeholder="Enter Full Name"
+                      autoComplete="name"
+                    />
+                  </div>
+                  <div className={style.field}>
+                    <label htmlFor="emailAddress">Email</label>
+                    <input
+                      type="email"
+                      name="emailAddress"
+                      placeholder="Enter Email Address"
+                      autoComplete="email"
+                    />
+                  </div>
+                  <div>
+                    <button type="submit">Enroll</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </Card>
+        </motion.section>
+        <motion.section variants={fadeIn} className={style.about}>
+          <h2>A Different Approach</h2>
+          <p>
+            We believe in fostering a community of well-grounded, lifelong
+            learners. We will achieve this by providing free learning materials
+            across a variety of subjects accessible to people of all abilities
+            and learning styles. We also wish to faithfully address the
+            underrepresentation of BIPOC (Black, Indigenous, and People of
+            Color) in professional communities.
+          </p>
+        </motion.section>
+        <motion.section variants={fadeIn} className={style.methods}>
+          <div className={style.bumpBottom}>
+            <h3>Live Lectures</h3>
+            <img src="/images/lecture.png" />
+            <p>
+              Students will be able to participate in live lectures where they
+              can ask questions in a safe learning environment.
+            </p>
+          </div>
+          <div>
+            <h3>Self-paced</h3>
+            <img src="/images/come-back-later.png" />
+            <p>
+              Life happens! We won't hold you to harsh deadlines, stringent
+              standards, or unrealistic expectations. Take classes at your own
+              pace and you'll never be left behind!
+            </p>
+          </div>
+        </motion.section>
+        <motion.section variants={fadeIn} className={style.methods}>
+          <div>
+            <h3>Simulated Workplace</h3>
+            <img src="/images/team-work.png" />
+            <p>
+              Through our programs, you'll participate in simulated work
+              environments where you'll get hands on experience dealing with
+              real-world problems! Throughout your coursework, you'll also build
+              a professional portfolio showcasing your skills.
+            </p>
+          </div>
+        </motion.section>
+      </Layout>
+    </motion.div>
+  );
 }
+
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+  console.log(e);
+};

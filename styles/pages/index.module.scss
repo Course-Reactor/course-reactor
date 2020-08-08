@@ -1,0 +1,98 @@
+@use "../breakpoints";
+@use "../typography";
+
+.container {
+  section {
+    margin-bottom: 150px;
+
+    @media only screen and (max-width: breakpoints.$tablet) {
+      margin-bottom: 100px;
+    }
+  }
+}
+
+.hero {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    max-width: 45%;
+  }
+
+  h1 {
+    font-size: typography.$title;
+    margin: 0;
+  }
+
+  p {
+    font-size: typography.$large;
+  }
+
+  @media only screen and (max-width: breakpoints.$tablet) {
+    flex-direction: column;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.form {
+  .horizontal {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .field {
+      display: inline-block;
+      flex-grow: 1;
+      margin-right: 35px;
+
+      label {
+        display: block;
+      }
+    }
+
+    @media only screen and (max-width: breakpoints.$tablet) {
+      align-items: stretch;
+      flex-direction: column;
+
+      .field {
+        margin: 0 0 35px;
+      }
+    }
+  }
+}
+
+.about {
+  text-align: center;
+
+  p {
+    font-size: typography.$medium;
+  }
+}
+
+.methods {
+  display: flex;
+  font-size: typography.$medium;
+  text-align: center;
+
+  div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @media only screen and (max-width: breakpoints.$tablet) {
+    flex-direction: column;
+  }
+}
+
+.bumpBottom {
+  margin-bottom: 100px;
+}
