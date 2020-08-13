@@ -62,7 +62,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://www.coursereactor.org/images/share_preview.jpg"
+          content="https://www.coursereactor.org/images/share-preview.jpg"
         />
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -77,7 +77,7 @@ export default function Home() {
         />
         <meta
           property="twitter:image"
-          content="https://www.coursereactor.org/images/share_preview.jpg"
+          content="https://www.coursereactor.org/images/share-preview.jpg"
         />
       </Head>
       <Layout>
