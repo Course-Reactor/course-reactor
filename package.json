@@ -8,7 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
     "framer-motion": "^2.1.4",
+    "graphql": "^15.3.0",
     "modern-normalize": "^0.7.0",
     "next": "9.4.4",
     "react": "16.13.1",

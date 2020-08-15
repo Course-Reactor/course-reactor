@@ -1,4 +1,5 @@
 import Card from "./Card";
 import Layout from "./Layout";
+import RegistrationForm from "./RegistrationForm";
 
-export { Card, Layout };
+export { Card, Layout, RegistrationForm };

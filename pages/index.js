@@ -1,7 +1,6 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import { Card, Layout } from "../components";
+import { Card, Layout, RegistrationForm } from "../components";
 import style from "../styles/pages/index.module.scss";
 
 const easing = [0.6, -0.05, 0.01, 0.99];
@@ -31,19 +30,6 @@ const fadeIn = {
 };
 
 export default function Home() {
-  useEffect(() => {
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbzR8G1WP5g5jLPIY7OxKCEt3aMEJQjc9hU18qGUZGH7tGGKuN4/exec";
-    const form = document.forms["enrollment-form"];
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then((response) => console.log("Success!", response))
-        .catch((error) => console.error("Error!", error.message));
-    });
-  });
-
   return (
     <motion.div
       className={style.container}
@@ -108,40 +94,7 @@ export default function Home() {
         </motion.section>
         <motion.section variants={fadeIn}>
           <Card>
-            <header>
-              <h2>Web Development Degree</h2>
-              <span>
-                Class Begins: September 1<sup>st</sup> 2020
-              </span>
-            </header>
-            <form name="enrollment-form" className={style.form}>
-              <fieldset>
-                <div className={style.horizontal}>
-                  <legend>Enrollment Form</legend>
-                  <div className={style.field}>
-                    <label htmlFor="full_name">Full Name</label>
-                    <input
-                      type="text"
-                      name="full_name"
-                      placeholder="Enter Full Name"
-                      autoComplete="name"
-                    />
-                  </div>
-                  <div className={style.field}>
-                    <label htmlFor="email_address">Email</label>
-                    <input
-                      type="email"
-                      name="email_address"
-                      placeholder="Enter Email Address"
-                      autoComplete="email"
-                    />
-                  </div>
-                  <div>
-                    <button type="submit">Enroll</button>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
+            <RegistrationForm />
           </Card>
         </motion.section>
         <motion.section variants={fadeIn} className={style.about}>

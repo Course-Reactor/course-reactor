@@ -38,33 +38,6 @@
   }
 }
 
-.form {
-  .horizontal {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-
-    .field {
-      display: inline-block;
-      flex-grow: 1;
-      margin-right: 35px;
-
-      label {
-        display: block;
-      }
-    }
-
-    @media only screen and (max-width: breakpoints.$tablet) {
-      align-items: stretch;
-      flex-direction: column;
-
-      .field {
-        margin: 0 0 35px;
-      }
-    }
-  }
-}
-
 .about {
   text-align: center;
 
