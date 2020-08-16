@@ -20,9 +20,14 @@ export default function RegistrationForm() {
   const [fullName, setFullName] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [errorText, setErrorText] = useState(undefined);
+  const [successText, setSuccessText] = useState(undefined);
   const [submitEnrollment] = useMutation(SUBMIT_ENROLLMENT, {
     onError: ({ graphQLErrors, networkError }) =>
       handleErrors({ graphQLErrors, networkError }),
+    onCompleted: (_data) =>
+      setSuccessText(
+        "We've got you! A member of our team will email you back shortly."
+      ),
   });
 
   const handleErrors = ({ graphQLErrors, networkError }) => {
@@ -39,6 +44,8 @@ export default function RegistrationForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorText(undefined);
+    setSuccessText(undefined);
 
     submitEnrollment({
       variables: {
@@ -88,6 +95,7 @@ export default function RegistrationForm() {
         </fieldset>
       </form>
       {errorText && <span className={style.error}>{errorText}</span>}
+      {successText && <span className={style.success}>{successText}</span>}
     </>
   );
 }

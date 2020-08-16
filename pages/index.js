@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Head from "next/head";
+import Link from "next/link";
 import { Card, Layout, RegistrationForm } from "../components";
 import style from "../styles/pages/index.module.scss";
 
@@ -37,50 +37,21 @@ export default function Home() {
       animate="animate"
       exit={{ opacity: 0 }}
     >
-      <Head>
-        <title>Course Reactor</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-        <meta name="title" content="Course Reactor - Earn a Degree Online" />
-        <meta
-          name="description"
-          content="The Course Reactor Foundation exists to democratize education and allow people from all walks of life to pursue their interests and participate in academia."
-        />
-        {/* Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.coursereactor.org/" />
-        <meta
-          property="og:title"
-          content="Course Reactor - Earn a Degree Online"
-        />
-        <meta
-          property="og:description"
-          content="The Course Reactor Foundation exists to democratize education and allow people from all walks of life to pursue their interests and participate in academia."
-        />
-        <meta
-          property="og:image"
-          content="https://www.coursereactor.org/images/share-preview.jpg"
-        />
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.coursereactor.org/" />
-        <meta
-          property="twitter:title"
-          content="Course Reactor - Earn a Degree Online"
-        />
-        <meta
-          property="twitter:description"
-          content="The Course Reactor Foundation exists to democratize education and allow people from all walks of life to pursue their interests and participate in academia."
-        />
-        <meta
-          property="twitter:image"
-          content="https://www.coursereactor.org/images/share-preview.jpg"
-        />
-      </Head>
       <Layout>
+        <motion.nav variants={fadeIn} className={style.nav}>
+          <ul>
+            <li>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/programs">
+                <a>Programs</a>
+              </Link>
+            </li>
+          </ul>
+        </motion.nav>
         <motion.section variants={fadeInUp} className={style.hero}>
           <aside>
             <h1>Course Reactor</h1>

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { AnimatePresence } from "framer-motion";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import "modern-normalize/modern-normalize.css";
@@ -10,10 +11,15 @@ const client = new ApolloClient({
 
 export default function CourseReactor({ Component, pageProps, router }) {
   return (
-    <ApolloProvider client={client}>
-      <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
-    </ApolloProvider>
+    <>
+      <Head>
+        <title>Course Reactor</title>
+      </Head>
+      <ApolloProvider client={client}>
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
+      </ApolloProvider>
+    </>
   );
 }

@@ -27,8 +27,16 @@
   }
 }
 
-.error {
+.error,
+.success {
   display: inline-block;
-  color: var(--error);
   margin-top: 15px;
+}
+
+.error {
+  color: var(--error);
+}
+
+.success {
+  color: var(--success);
 }
