@@ -1,0 +1,19 @@
+@use "../typography";
+
+.mission {
+  color: var(--primary);
+  font-size: typography.$medium;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 35px;
+}
+
+.title {
+  margin-bottom: 50px;
+}
+
+.list {
+  li {
+    margin-bottom: 15px;
+  }
+}

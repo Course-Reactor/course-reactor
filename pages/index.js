@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Card, Layout, RegistrationForm } from "../components";
+import { ApiProvider, Card, Layout, RegistrationForm } from "../components";
 import style from "../styles/pages/index.module.scss";
 
 const easing = [0.6, -0.05, 0.01, 0.99];
@@ -65,7 +65,9 @@ export default function Home() {
         </motion.section>
         <motion.section variants={fadeIn}>
           <Card>
-            <RegistrationForm />
+            <ApiProvider>
+              <RegistrationForm />
+            </ApiProvider>
           </Card>
         </motion.section>
         <motion.section variants={fadeIn} className={style.about}>
