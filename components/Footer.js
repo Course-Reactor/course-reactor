@@ -21,7 +21,7 @@ export default function Footer() {
               className={styleUtils.center}
             >
               <FiTwitter />
-              <span>Follow on Twitter</span>
+              <span>Follow us on Twitter</span>
             </a>
           </li>
           <li>
@@ -32,7 +32,7 @@ export default function Footer() {
               className={styleUtils.center}
             >
               <FiInstagram />
-              <span>Follow on Instagram</span>
+              <span>Follow us on Instagram</span>
             </a>
           </li>
           <li>
@@ -41,7 +41,7 @@ export default function Footer() {
               className={styleUtils.center}
             >
               <FiMail />
-              <span>Email Us</span>
+              <span>Email us</span>
             </a>
           </li>
         </ul>

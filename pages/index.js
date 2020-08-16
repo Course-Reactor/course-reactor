@@ -1,33 +1,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ApiProvider, Card, Layout, RegistrationForm } from "../components";
+import { fadeIn, fadeInUp } from "../lib/ui-helpers";
 import style from "../styles/pages/index.module.scss";
-
-const easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-  initial: {
-    y: 60,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      easing: easing,
-    },
-  },
-};
-
-const fadeIn = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-  },
-};
 
 export default function Home() {
   return (

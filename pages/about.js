@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Breadcrumbs, Layout } from "../components";
 import style from "../styles/pages/about.module.scss";
-import { fadeIn } from "../lib/ui-helpers";
+import { fadeIn, fadeInUp } from "../lib/ui-helpers";
 
 export default function About() {
   return (
@@ -9,7 +9,7 @@ export default function About() {
       <Layout>
         <Breadcrumbs />
         <h1 className={style.title}>About</h1>
-        <motion.section variants={fadeIn}>
+        <motion.section variants={fadeIn} className={style.section}>
           <h2>Mission Statement</h2>
           <p className={style.mission}>
             The Course Reactor Foundation exists to democratize education and
@@ -17,7 +17,7 @@ export default function About() {
             participate in academia without economic or social barriers.
           </p>
         </motion.section>
-        <motion.section variants={fadeIn}>
+        <motion.section variants={fadeIn} className={style.section}>
           <h2>Goals</h2>
           <ol className={style.list}>
             <li>Foster a community of well-grounded, lifelong learners.</li>
@@ -40,35 +40,47 @@ export default function About() {
             and through our programs, hope to provide equitable pathways for
             anyone who wishes to pursue them.
           </p>
-          <h3>Education</h3>
-          <p>
-            We believe that education is a fundamental human right. The goals of
-            Course Reactor are to provide a curriculum that is relevant,
-            historically accurate, and democratically accepted amongst the
-            appropriate bodies that govern over that subject matter. While we
-            wish to provide education materials that span broadly amongst these
-            topics, we hope to tailor our programs towards career readiness and
-            providing skills that can be useful in progressing innovation.
-          </p>
-          <h3>Career Rediness</h3>
-          <p>
-            While the primary function of Course Reactor is not to explicitly
-            place candidates in jobs or to act as a staffing or recruitment
-            agency, we wish to provide quality and reputable resources to make
-            students and prospective job candidates’ transition into these lines
-            of work easier. We can achieve this through strategic partnerships
-            with industry professionals and by providing a curriculum that
-            advances skills while having a direct community impact.
-          </p>
-          <h3>Community Outreach</h3>
-          <p>
-            The Course Reactor Foundation is committed to remaining focused on
-            positively impacting communities who find themselves disadvantaged
-            for any number of reasons. Our courses are tailored towards
-            providing students a chance to work on projects that demonstrate
-            their skills while also providing valuable tools to the community.
-          </p>
         </motion.section>
+        <div className={style.grid}>
+          <motion.section variants={fadeInUp}>
+            <div>
+              <h3>Education</h3>
+              <p>
+                We believe that education is a fundamental human right. The
+                goals of Course Reactor are to provide a curriculum that is
+                relevant, historically accurate, and democratically accepted
+                amongst the appropriate bodies that govern over that subject
+                matter. While we wish to provide education materials that span
+                broadly amongst these topics, we hope to tailor our programs
+                towards career readiness and providing skills that can be useful
+                in progressing innovation.
+              </p>
+            </div>
+          </motion.section>
+          <motion.section variants={fadeInUp}>
+            <h3>Career Rediness</h3>
+            <p>
+              While the primary function of Course Reactor is not to explicitly
+              place candidates in jobs or to act as a staffing or recruitment
+              agency, we wish to provide quality and reputable resources to make
+              students and prospective job candidates’ transition into these
+              lines of work easier. We can achieve this through strategic
+              partnerships with industry professionals and by providing a
+              curriculum that advances skills while having a direct community
+              impact.
+            </p>
+          </motion.section>
+          <motion.section variants={fadeInUp}>
+            <h3>Community Outreach</h3>
+            <p>
+              The Course Reactor Foundation is committed to remaining focused on
+              positively impacting communities who find themselves disadvantaged
+              for any number of reasons. Our courses are tailored towards
+              providing students a chance to work on projects that demonstrate
+              their skills while also providing valuable tools to the community.
+            </p>
+          </motion.section>
+        </div>
       </Layout>
     </motion.div>
   );

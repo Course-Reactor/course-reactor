@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Layout, Breadcrumbs, Card } from "../../components";
+import { fadeInLeft } from "../../lib/ui-helpers";
 import style from "../../styles/pages/programs.module.scss";
 
 export default function Programs() {
@@ -9,24 +10,28 @@ export default function Programs() {
       <Layout>
         <Breadcrumbs />
         <h1 className={style.title}>Programs</h1>
-        <motion.section className={style.grid}>
-          <Card>
-            <header>
-              <h2>Web Development Degree</h2>
-              <span>
-                Class Begins: September 1<sup>st</sup> 2020
-              </span>
-            </header>
-            <Link href="/programs/web-development">
-              <a>Learn More</a>
-            </Link>
-          </Card>
-          <Card>
-            <header>
-              <h2>Coming soon...</h2>
-            </header>
-          </Card>
-        </motion.section>
+        <section className={style.grid}>
+          <motion.div variants={fadeInLeft}>
+            <Card>
+              <header>
+                <h2>Web Development Degree</h2>
+                <span>
+                  Class Begins: September 1<sup>st</sup> 2020
+                </span>
+              </header>
+              <Link href="/programs/web-development">
+                <a>Learn More</a>
+              </Link>
+            </Card>
+          </motion.div>
+          <motion.div variants={fadeInLeft}>
+            <Card>
+              <header>
+                <h2>More coming soon...</h2>
+              </header>
+            </Card>
+          </motion.div>
+        </section>
       </Layout>
     </motion.div>
   );
