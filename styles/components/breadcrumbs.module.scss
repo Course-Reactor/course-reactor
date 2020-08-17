@@ -1,0 +1,14 @@
+@use "../typography";
+
+.link {
+  align-items: center;
+  color: var(--link);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: typography.$medium;
+  margin-bottom: 35px;
+
+  svg {
+    margin-right: 10px;
+  }
+}

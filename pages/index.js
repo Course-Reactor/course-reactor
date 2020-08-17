@@ -1,33 +1,8 @@
 import { motion } from "framer-motion";
-import Head from "next/head";
-import { Card, Layout } from "../components";
+import Link from "next/link";
+import { ApiProvider, Card, Layout, RegistrationForm } from "../components";
+import { fadeIn, fadeInUp } from "../lib/ui-helpers";
 import style from "../styles/pages/index.module.scss";
-
-const easing = [0.6, -0.05, 0.01, 0.99];
-
-const fadeInUp = {
-  initial: {
-    y: 60,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      easing: easing,
-    },
-  },
-};
-
-const fadeIn = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-  },
-};
 
 export default function Home() {
   return (
@@ -37,15 +12,21 @@ export default function Home() {
       animate="animate"
       exit={{ opacity: 0 }}
     >
-      <Head>
-        <title>Course Reactor</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
       <Layout>
+        <motion.nav variants={fadeIn} className={style.nav}>
+          <ul>
+            <li>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/programs">
+                <a>Programs</a>
+              </Link>
+            </li>
+          </ul>
+        </motion.nav>
         <motion.section variants={fadeInUp} className={style.hero}>
           <aside>
             <h1>Course Reactor</h1>
@@ -59,40 +40,9 @@ export default function Home() {
         </motion.section>
         <motion.section variants={fadeIn}>
           <Card>
-            <header>
-              <h2>Web Development Degree</h2>
-              <span>
-                Class Begins: September 1<sup>st</sup> 2020
-              </span>
-            </header>
-            <form onSubmit={handleFormSubmit} className={style.form}>
-              <fieldset>
-                <div className={style.horizontal}>
-                  <legend>Enrollment Form</legend>
-                  <div className={style.field}>
-                    <label htmlFor="fullName">Full Name</label>
-                    <input
-                      type="text"
-                      name="fullName"
-                      placeholder="Enter Full Name"
-                      autoComplete="name"
-                    />
-                  </div>
-                  <div className={style.field}>
-                    <label htmlFor="emailAddress">Email</label>
-                    <input
-                      type="email"
-                      name="emailAddress"
-                      placeholder="Enter Email Address"
-                      autoComplete="email"
-                    />
-                  </div>
-                  <div>
-                    <button type="submit">Enroll</button>
-                  </div>
-                </div>
-              </fieldset>
-            </form>
+            <ApiProvider>
+              <RegistrationForm />
+            </ApiProvider>
           </Card>
         </motion.section>
         <motion.section variants={fadeIn} className={style.about}>

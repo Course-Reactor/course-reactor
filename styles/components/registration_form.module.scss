@@ -1,0 +1,42 @@
+@use "../breakpoints";
+
+.form {
+  .horizontal {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .field {
+      display: inline-block;
+      flex-grow: 1;
+      margin-right: 35px;
+
+      label {
+        display: block;
+      }
+    }
+
+    @media only screen and (max-width: breakpoints.$tablet) {
+      align-items: stretch;
+      flex-direction: column;
+
+      .field {
+        margin: 0 0 35px;
+      }
+    }
+  }
+}
+
+.error,
+.success {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.error {
+  color: var(--error);
+}
+
+.success {
+  color: var(--success);
+}

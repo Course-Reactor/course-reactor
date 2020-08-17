@@ -1,0 +1,36 @@
+@use "../breakpoints";
+
+.footer {
+  color: var(--font);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  h3 {
+    margin-bottom: 18px;
+  }
+
+  svg {
+    font-size: 1.75rem;
+    margin-right: 15px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  @media only screen and (max-width: breakpoints.$tablet) {
+    flex-direction: column;
+
+    div:not(:last-of-type) {
+      margin-bottom: 35px;
+    }
+  }
+}

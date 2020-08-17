@@ -1,0 +1,36 @@
+@use "../typography";
+@use "../breakpoints";
+
+.mission {
+  color: var(--primary);
+  font-size: typography.$medium;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 35px;
+}
+
+.title {
+  margin-bottom: 50px;
+}
+
+.list {
+  li {
+    margin-bottom: 15px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 100px;
+  text-align: center;
+
+  @media only screen and (max-width: breakpoints.$tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section {
+  margin-bottom: 100px;
+}
