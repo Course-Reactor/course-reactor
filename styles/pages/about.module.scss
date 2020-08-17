@@ -23,6 +23,7 @@
   display: grid;
   grid-gap: 50px;
   grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 100px;
   text-align: center;
 
   @media only screen and (max-width: breakpoints.$tablet) {

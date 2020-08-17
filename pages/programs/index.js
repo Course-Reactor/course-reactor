@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Layout, Breadcrumbs, Card } from "../../components";
 import { fadeInLeft } from "../../lib/ui-helpers";
 import style from "../../styles/pages/programs.module.scss";
+import styleUtils from "../../styles/components/utils.module.scss";
 
 export default function Programs() {
   return (
@@ -20,7 +21,7 @@ export default function Programs() {
                 </span>
               </header>
               <Link href="/programs/web-development">
-                <a>Learn More</a>
+                <a className={styleUtils.bold}>Learn More</a>
               </Link>
             </Card>
           </motion.div>

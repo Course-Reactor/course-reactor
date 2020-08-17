@@ -6,7 +6,12 @@ export default function Breadcrumbs() {
   const router = useRouter();
 
   return (
-    <span className={style.link} onClick={(e) => router.back()} role="link">
+    <span
+      className={style.link}
+      onClick={(e) => router.back()}
+      role="link"
+      tabIndex={0}
+    >
       <FiArrowLeft />
       Back
     </span>

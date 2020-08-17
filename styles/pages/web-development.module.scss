@@ -1,0 +1,38 @@
+@use "../breakpoints";
+
+.overview,
+.materials,
+.syllabus {
+  margin-bottom: 50px;
+}
+
+.title {
+  margin-bottom: 35px;
+}
+
+.instructor {
+  margin: 0 auto 50px;
+  max-width: 850px;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: breakpoints.$tablet) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.materials {
+  ul {
+    li {
+      margin-bottom: 15px;
+    }
+  }
+}

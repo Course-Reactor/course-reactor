@@ -81,6 +81,30 @@ export default function About() {
             </p>
           </motion.section>
         </div>
+        <motion.section variants={fadeIn} className={style.section}>
+          <h2>Foundation</h2>
+          <p>
+            The Course Reactor Foundation is a non-profit corporation registered
+            in the state of Missouri. As of August 2020, the foundation is
+            supported 100% by private donation from the founding members. While
+            we plan on accepting donations in the future, we first want to
+            ensure that we are only asking for as much as it costs us to
+            operate. We firmly believe in being transparent, and will provide
+            statements including our vendors, operating expenses, every dollar
+            we take in donations, what we spend that money on, and how much cash
+            on hand we may hold at any given time. Right now, our founding
+            members, instructors, and any assistants are giving their time and
+            labor voluntarily without compensation. In the future, we want to
+            ensure that we pay our staff fair and equitable wages, so we will
+            post every paid employee, operator, manager, and executive's salary.
+            All board members, operators, and managers will be elected
+            democratically and elections will be held according to the bylaws.
+            Board members, excluding any who may also act as staff, are not
+            compensated by the foundation, but may receive reimbursement for any
+            expenses they may accrue while supporting the foundation with all
+            expense reports being posted for public review.
+          </p>
+        </motion.section>
       </Layout>
     </motion.div>
   );
