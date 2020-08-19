@@ -58,7 +58,7 @@ export default function About() {
             </div>
           </motion.section>
           <motion.section variants={fadeInUp}>
-            <h3>Career Rediness</h3>
+            <h3>Career Readiness</h3>
             <p>
               While the primary function of Course Reactor is not to explicitly
               place candidates in jobs or to act as a staffing or recruitment
