@@ -3,12 +3,17 @@
 .link {
   align-items: center;
   color: var(--link);
-  cursor: pointer;
   display: inline-flex;
   font-size: typography.$medium;
-  margin-bottom: 35px;
 
   svg {
-    margin-right: 10px;
+    margin: 0 10px;
   }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
 }
