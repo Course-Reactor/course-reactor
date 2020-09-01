@@ -51,7 +51,7 @@ export default function RegistrationForm() {
       variables: {
         full_name: fullName,
         email_address: emailAddress,
-        cohort: "fall_2020_web",
+        cohort: "spring_2021_web",
       },
     });
   };
@@ -60,8 +60,9 @@ export default function RegistrationForm() {
     <>
       <header>
         <h2>Web Development Degree</h2>
-        <span>
-          Class Begins: September 1<sup>st</sup> 2020
+        <span className={style.error}>
+          Our Fall cohort has already begun. You can sign up here to be enrolled
+          in our Spring 2021 semester.
         </span>
       </header>
       <form onSubmit={handleSubmit} className={style.form}>
