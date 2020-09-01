@@ -62,7 +62,7 @@ export default function RegistrationForm() {
         <h2>Web Development Degree</h2>
         <span className={style.error}>
           Our Fall cohort has already begun. You can sign up here to be enrolled
-          in our Spring 2021 semester.
+          in our Spring 2021 cohort.
         </span>
       </header>
       <form onSubmit={handleSubmit} className={style.form}>
