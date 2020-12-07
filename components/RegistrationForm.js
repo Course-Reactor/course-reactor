@@ -47,8 +47,10 @@ export default function RegistrationForm() {
     setErrorText(undefined);
     setSuccessText(undefined);
 
-    if (fullName === "" || emailAddress === "")
+    if (fullName === "" || emailAddress === "") {
       setErrorText("Please enter your full name and email address.");
+      return;
+    }
 
     submitEnrollment({
       variables: {
@@ -62,7 +64,7 @@ export default function RegistrationForm() {
   return (
     <>
       <header>
-        <h2>Web Development Degree</h2>
+        <h2>Web Development Degree (Spring 2020)</h2>
       </header>
       <form onSubmit={handleSubmit} className={style.form}>
         <fieldset>
