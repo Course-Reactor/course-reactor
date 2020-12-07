@@ -47,6 +47,9 @@ export default function RegistrationForm() {
     setErrorText(undefined);
     setSuccessText(undefined);
 
+    if (fullName === "" || emailAddress === "")
+      setErrorText("Please enter your full name and email address.");
+
     submitEnrollment({
       variables: {
         full_name: fullName,
@@ -60,10 +63,6 @@ export default function RegistrationForm() {
     <>
       <header>
         <h2>Web Development Degree</h2>
-        <span className={style.error}>
-          Our Fall cohort has already begun. You can sign up here to be enrolled
-          in our Spring 2021 cohort.
-        </span>
       </header>
       <form onSubmit={handleSubmit} className={style.form}>
         <fieldset>
