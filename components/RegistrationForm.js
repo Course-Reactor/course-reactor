@@ -64,7 +64,7 @@ export default function RegistrationForm() {
   return (
     <>
       <header>
-        <h2>Web Development Degree (Spring 2020)</h2>
+        <h2>Web Development Degree (Spring 2021)</h2>
       </header>
       <form onSubmit={handleSubmit} className={style.form}>
         <fieldset>
