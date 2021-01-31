@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ApiProvider, Card, Layout, RegistrationForm } from "../components";
+import { Layout } from "../components";
 import { fadeIn, fadeInUp } from "../lib/ui-helpers";
 import style from "../styles/pages/index.module.scss";
 
@@ -38,13 +38,13 @@ export default function Home() {
           </aside>
           <img src="/images/scholar.png" />
         </motion.section>
-        <motion.section variants={fadeIn}>
+        {/* <motion.section variants={fadeIn}>
           <Card>
             <ApiProvider>
               <RegistrationForm />
             </ApiProvider>
           </Card>
-        </motion.section>
+        </motion.section> */}
         <motion.section variants={fadeIn} className={style.about}>
           <h2>A Different Approach</h2>
           <p>

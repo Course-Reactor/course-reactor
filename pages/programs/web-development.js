@@ -3,8 +3,8 @@ import {
   Layout,
   Breadcrumbs,
   Card,
-  RegistrationForm,
-  ApiProvider,
+  // RegistrationForm,
+  // ApiProvider,
 } from "../../components";
 import { fadeInLeft, fadeIn } from "../../lib/ui-helpers";
 import style from "../../styles/pages/web-development.module.scss";
@@ -90,10 +90,14 @@ export default function WebDevelopment() {
           </ul>
         </motion.section>
         <motion.section variants={fadeIn}>
-          <h2>Register Today!</h2>
-          <ApiProvider>
+          <h2>Registraion</h2>
+          <p>
+            You will be able to start registering for our Fall 2021 cohort on
+            July 1st, 2021.
+          </p>
+          {/* <ApiProvider>
             <RegistrationForm />
-          </ApiProvider>
+          </ApiProvider> */}
         </motion.section>
       </Layout>
     </motion.div>
