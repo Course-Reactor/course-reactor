@@ -16,7 +16,7 @@ export default function Programs() {
             <Card>
               <header>
                 <h2>Web Development Degree</h2>
-                <span>Next Cohort Begins: Spring 2021</span>
+                <span>Next Cohort Begins: Fall 2021</span>
               </header>
               <Link href="/programs/web-development">
                 <a className={styleUtils.bold}>Learn More</a>
